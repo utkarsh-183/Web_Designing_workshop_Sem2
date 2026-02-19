@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: skyblue;
+}
+.FlappyBird{
+    height: 500px;
+    width: 400px;
+    border: 1px solid black;
+    background-color: lightblue;
+    position: relative;
+    overflow: hidden;
+}
+.bird{
+    position: absolute;
+    left: 100px;
+    top: 225px;
+    width: 60px;
+    height: 60px;
+}
+.FlappyBird img{
+    height: 60px;
+    width: 60px;
+    display: block;
+}
+.upperpillar,.lowerpillar{
+    width: 60px;
+    border: 2px solid black;
+    background-color: green;
+    position: absolute;
+    left: 400px;
+    animation: movement 4s linear infinite;
+}
+.upperpillar{
+    height: 210px;
+    top: 0;
+}
+.lowerpillar{
+    height: 150px;
+    bottom: 0;
+}
+.upperpillar2,.lowerpillar2{
+    width: 60px;
+    border: 2px solid black;
+    background-color: green;
+    position: absolute;
+    left: 400px;
+    animation: movement 4s linear infinite;
+    animation-delay: 1.33s;
+}
+.upperpillar2{
+    height: 150px;
+    top: 0;
+}
+.lowerpillar2{
+    height: 200px;
+    bottom: 0;
+}
+.upperpillar3,.lowerpillar3{
+    width: 60px;
+    border: 2px solid black;
+    background-color: green;
+    position: absolute;
+    left: 400px;
+    animation: movement 4s linear infinite;
+    animation-delay: 2.7s;
+}
+.upperpillar3{
+    height: 180px;
+    top: 0;
+}
+.lowerpillar3{
+    height: 170px;
+    bottom: 0;
+}
+@keyframes movement{
+    0%{
+        left: 400px;
+    }
+    100%{
+        left: -60px;
+    }
+}

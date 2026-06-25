@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vowel or Consonant Checker</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .container {
+            width: 380px;
+            padding: 35px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 18px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+            transition: 0.3s;
+        }
+
+        .container:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 25px;
+            font-size: 26px;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            font-size: 16px;
+            border: 2px solid #dcdcdc;
+            border-radius: 10px;
+            outline: none;
+            margin-bottom: 18px;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+            transform: scale(1.02);
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 5px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 9px 18px rgba(102, 126, 234, 0.55);
+        }
+
+        button:active {
+            transform: translateY(1px);
+            box-shadow: 0 3px 8px rgba(102, 126, 234, 0.4);
+        }
+
+        #result {
+            margin-top: 22px;
+            min-height: 25px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #444;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Vowel or Consonant Checker</h2>
+
+        <input
+            type="text"
+            id="charInput"
+            placeholder="Enter one character"
+            maxlength="1"
+        >
+
+        <button onclick="checkCharacter()">Check</button>
+
+        <h3 id="result"></h3>
+    </div>
+
+    <script>
+        function checkCharacter() {
+            const input = document.getElementById("charInput").value.trim();
+            const result = document.getElementById("result");
+
+            const character = input.toLowerCase();
+
+            if (character === "") {
+                result.innerHTML = "Please enter a character";
+            }
+            else if (!/[a-z]/.test(character)) {
+                result.innerHTML = "Please enter an alphabet character";
+            }
+            else if (
+                character === "a" ||
+                character === "e" ||
+                character === "i" ||
+                character === "o" ||
+                character === "u"
+            ) {
+                result.innerHTML = character + " is a Vowel";
+            }
+            else {
+                result.innerHTML = character + " is a Consonant";
+            }
+        }
+    </script>
+
+</body>
+</html>
